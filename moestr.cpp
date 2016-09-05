@@ -8,6 +8,13 @@ All functions return the offset where the first substring appears
 
 #include "moestr.h"
 
+int Str_Len(char* str)
+{
+	int i = 0;
+	for (; str[i] != '\0'; i++);
+	return(i);
+}
+
 //Searching String Using Sunday Algorithm
 int Str_Sunday(char* str, char* sub)
 {
@@ -103,6 +110,7 @@ int Str_BM(char* str, char* sub)
 	{
 		n[j] = i;
 	}
+	free(o);
 	//finding the string
 	i = 0;
 	while (str[i] != '\0')
@@ -111,6 +119,8 @@ int Str_BM(char* str, char* sub)
 		{
 			if (j == 0)
 			{
+				free(m);
+				free(n);
 				return(i);
 			}
 		}
@@ -123,6 +133,8 @@ int Str_BM(char* str, char* sub)
 			i += n[j];
 		}
 	}
+	free(m);
+	free(n);
 	return(-1);
 }
 
