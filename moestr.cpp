@@ -138,7 +138,7 @@ int Str_BM(char* str, char* sub)
 	return(-1);
 }
 
-//Searching String Using Knuth¨CMorris¨CPratt Algorithm
+//Searching String Using Knuth-Morris-Pratt Algorithm
 int Str_KMP(char* str, char* sub)
 {
 	int c = Str_Len(sub);
